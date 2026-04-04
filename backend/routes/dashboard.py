@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-router = APIRouter(prefix="/dashboard/")
+router = APIRouter(prefix="/dashboard")
 
 r = redis.from_url(
     os.getenv("REDIS_URL"),
