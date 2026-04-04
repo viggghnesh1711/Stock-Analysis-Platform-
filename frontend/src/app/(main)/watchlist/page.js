@@ -37,7 +37,7 @@ function Page() {
 
       <div className=" md:mt-0 md:flex items-center justify-center h-full">
         {!isSignedIn ? (
-          <div className="text-center space-y-4 mt-40 md:0">
+          <div className="text-center space-y-4 mt-40 md:mt-20 md:0">
             <h2 className="text-xl font-semibold">
               🔐 Login to view your Watchlist
             </h2>
