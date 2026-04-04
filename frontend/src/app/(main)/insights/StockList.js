@@ -11,7 +11,7 @@ export default function StockTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/stocks`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/stocks/`)
         const data = await res.json()
         setData(data)
         setLastUpdated(data.date)
