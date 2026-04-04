@@ -8,7 +8,7 @@ from services.get_missinghistory import fetch_missing_history
 from services.stocksdb import update_stock_history
 from datetime import date
 
-router = APIRouter(prefix="/StockName/")
+router = APIRouter(prefix="/StockName")
 
 @router.get("")
 def getstockdetails(symbol):

@@ -16,7 +16,7 @@ r = redis.from_url(
     decode_responses=True
 )
 
-@router.get("/")
+@router.get("")
 async def get_dashboard():
     today = date.today().isoformat()
     cache_key = f"dashboard:{today}"
