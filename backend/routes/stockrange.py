@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from datetime import date, timedelta
 from supabase_client import supabase
 
-router = APIRouter(prefix="/StockRange")
+router = APIRouter(prefix="/StockRange/")
 
 RANGE_MAP = {
     "1W": 7,

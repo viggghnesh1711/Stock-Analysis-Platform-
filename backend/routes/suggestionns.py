@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from yfinance import Search
 
-router = APIRouter(prefix="/Suggestion")
+router = APIRouter(prefix="/Suggestion/")
 
 @router.get("")
 def yahoo_suggest(query,limit=8 ):

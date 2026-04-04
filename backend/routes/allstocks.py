@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-router = APIRouter(prefix="/stocks")
+router = APIRouter(prefix="/stocks/")
 
 r = redis.from_url(
     os.getenv("REDIS_URL"),
