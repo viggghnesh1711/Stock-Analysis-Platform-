@@ -1,4 +1,24 @@
 from supabase_client import supabase
+import math
+
+
+def safe_float(val):
+    if val is None:
+        return None
+    if isinstance(val, float):
+        if math.isnan(val) or math.isinf(val):
+            return None
+    return round(val, 2)
+
+
+def safe_int(val):
+    if val is None:
+        return None
+    try:
+        return int(val)
+    except:
+        return None
+
 
 def get_or_create_stock(stock_details):
 
@@ -30,11 +50,11 @@ def save_stock_history(stock_id, history):
     rows = [{
         "stock_id": stock_id,
         "price_date": day["date"],
-        "open_price": round(day["open"], 2),
-        "high_price": round(day["high"], 2),
-        "low_price": round(day["low"], 2),
-        "close_price": round(day["close"], 2),
-        "volume": int(day["volume"]),
+        "open_price": safe_float(day["open"]),
+        "high_price": safe_float(day["high"]),
+        "low_price": safe_float(day["low"]),
+        "close_price": safe_float(day["close"]),
+        "volume": safe_int(day["volume"]),
     } for day in history]
 
     res = supabase.table("stock_prices") \
@@ -56,11 +76,11 @@ def update_stock_history(stock_id, history):
     rows = [{
         "stock_id": stock_id,
         "price_date": day["date"],
-        "open_price": round(day["open"], 2),
-        "high_price": round(day["high"], 2),
-        "low_price": round(day["low"], 2),
-        "close_price": round(day["close"], 2),
-        "volume": int(day["volume"]),
+        "open_price": safe_float(day["open"]),
+        "high_price": safe_float(day["high"]),
+        "low_price": safe_float(day["low"]),
+        "close_price": safe_float(day["close"]),
+        "volume": safe_int(day["volume"]),
     } for day in history]
 
     res = supabase.table("stock_prices") \

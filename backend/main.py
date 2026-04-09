@@ -19,7 +19,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://stockly-mauve.vercel.app"
+        "https://stockly-mauve.vercel.app","http://localhost:3000"
     ],
     allow_credentials=False,
     allow_methods=["*"],

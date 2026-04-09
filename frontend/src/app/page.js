@@ -1,9 +1,14 @@
-import Image from "next/image";
+"use client"
+
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 export default function Home() {
-  return (
-    <>
-    <h1 className="text-red-500">main page</h1>
-    </>
-  );
+  const router = useRouter()
+
+  useEffect(() => {
+    router.replace("/dashboard")
+  }, [router])
+
+  return null
 }
